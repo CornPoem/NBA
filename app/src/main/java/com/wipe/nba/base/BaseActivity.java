@@ -3,7 +3,6 @@ package com.wipe.nba.base;
 import android.support.v7.app.AppCompatActivity;
 
 import com.wipe.nba.api.ApiService;
-import com.wipe.nba.ui.main.Contract;
 import com.wipe.nba.utils.RetrofitUtil;
 
 /**

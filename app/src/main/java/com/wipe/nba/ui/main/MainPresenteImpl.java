@@ -1,11 +1,18 @@
 package com.wipe.nba.ui.main;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/1/22.
  */
 public class MainPresenteImpl extends Contract.MainPresent implements Contract.CallBack {
     private Contract.MainMode mMode;
     private Contract.MainView mView;
+
+    public MainPresenteImpl(Contract.MainView mView) {
+        this.mView = mView;
+        mMode=new MainModeImpl();
+    }
 
     @Override
     public void getData() {
@@ -17,19 +24,14 @@ public class MainPresenteImpl extends Contract.MainPresent implements Contract.C
 //        mView.updateData(s);
 //    }
 
-    @Override
-    public void setMV(Contract.MainMode m, Contract.MainView v) {
-        mMode = m;
-        mView = v;
-    }
 
     @Override
-    public void sucess(String s) {
-        mView.updateData(s);
+    public void sucess(List data) {
+        mView.updateData(data);
     }
 
     @Override
     public void falied(String s) {
-
+            mView.updateDataFail(s);
     }
 }

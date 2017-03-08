@@ -4,6 +4,8 @@ import com.wipe.nba.base.BaseMode;
 import com.wipe.nba.base.BasePresent;
 import com.wipe.nba.base.BaseView;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/1/22.
  */
@@ -11,7 +13,8 @@ public interface Contract {
     interface MainView extends BaseView {
 //        void getData();
 
-        void updateData(String s);
+        void updateData(List data);
+        void updateDataFail(String msg);
     }
 
     interface MainMode extends BaseMode {
@@ -23,13 +26,13 @@ public interface Contract {
         public abstract void getData();
 
 //        public abstract void updateData(String s);
-
-        public abstract void setMV(MainMode m, MainView v);
+//
+//        public abstract void setMV(MainMode m, MainView v);
 
     }
 
     interface CallBack{
-        void sucess(String s);
+        void sucess(List data);
         void falied(String s);
     }
 }
